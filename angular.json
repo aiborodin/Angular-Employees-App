@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/materialize.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/materialize.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -118,6 +121,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "Angular-Web-App"

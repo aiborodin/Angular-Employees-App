@@ -1,0 +1,19 @@
+<div class="group">
+  <h3 [ngClass]="{old: isOld()}">Group {{group.number}}</h3>
+  <div *ngIf="showInfo; then btnHide else btnShow" class="edit-number"></div>
+  <ng-template #btnHide>
+    <button (click)="showInfo=false">Hide</button>
+  </ng-template>
+  <ng-template #btnShow>
+    <button (click)="showInfo=true">Details</button>
+  </ng-template>
+  <div class="info" *ngIf="showInfo">
+    <div class="edit-number">
+      <input type="text"
+             [(ngModel)]="group.number"
+             (ngModelChange)="onChange()">
+    </div>
+    <p class="faculty">Faculty: {{group.faculty}}</p>
+    <p class="speciality">Speciality: {{group.speciality}}</p>
+  </div>
+</div>
