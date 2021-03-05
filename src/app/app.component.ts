@@ -6,21 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular-Web-App';
-  changeDate = new Date();
   groups = [
     {
       number: 301,
       faculty: 'Computer Science',
-      speciality: 'Computer Science'
+      speciality: 'Computer Science',
+      studentsQuantity: 20
     },
     {
       number: 308,
       faculty: 'Computer Science',
-      speciality: 'Software Engineering'
+      speciality: 'Software Engineering',
+      studentsQuantity: 25
     }
   ];
-  onDataChange(event): void {
-    this.changeDate = event;
+
+  addGroup(group: any): void {
+    this.groups.push(group);
+  }
+
+  deleteGroup(index: number): void {
+    this.groups.splice(index, 1);
   }
 }
