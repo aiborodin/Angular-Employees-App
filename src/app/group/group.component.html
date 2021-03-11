@@ -8,6 +8,9 @@
       <i *ngIf="showInfo" class="material-icons">keyboard_arrow_up</i>
       <i *ngIf="!showInfo" class="material-icons">keyboard_arrow_down</i>
     </a>
+    <a [routerLink]="'/students/' + group.number" class="btn-floating waves-effect waves-light blue-grey">
+      <i class="material-icons">view_headline</i>
+    </a>
   </div>
 </div>
 <div class="info" *ngIf="showInfo">

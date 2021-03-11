@@ -1,4 +1,5 @@
 import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
+import {GroupsDataService} from '../services/groups-data.service';
 
 @Component({
   selector: 'app-group',
@@ -9,16 +10,15 @@ export class GroupComponent implements OnInit {
 
   @Input() group;
   @Input() grpIndex;
-  @Output() removeGroup = new EventEmitter();
   showInfo = false;
 
-  constructor() {
+  constructor(private groupService: GroupsDataService) {
   }
 
   ngOnInit(): void {
   }
 
   delGroup(): void {
-    this.removeGroup.emit(this.grpIndex);
+    this.groupService.deleteGroup(this.grpIndex);
   }
 }

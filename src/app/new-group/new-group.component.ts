@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {GroupsDataService} from '../services/groups-data.service';
 
 @Component({
   selector: 'app-new-group',
@@ -7,10 +8,9 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class NewGroupComponent implements OnInit {
 
-  @Output() group = new EventEmitter();
   showForm = false;
 
-  constructor() { }
+  constructor(private groupService: GroupsDataService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +18,7 @@ export class NewGroupComponent implements OnInit {
   onSubmit(myForm): void {
     const fields = myForm.form.controls;
     this.showForm = false;
-    this.group.emit({
+    this.groupService.addGroup({
       number: fields.number.value,
       faculty: fields.faculty.value,
       speciality: fields.speciality.value,
