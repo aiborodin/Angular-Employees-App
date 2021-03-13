@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {GroupsDataService} from './services/groups-data.service';
+import {DepartmentDataService} from './services/department-data.service';
 
 @Component({
   selector: 'app-root',

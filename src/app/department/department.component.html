@@ -1,6 +1,6 @@
 <div class="row valign-wrapper">
   <div class="col m3 offset-m3 s6 center-align">
-    <h5>{{group.number}}</h5>
+    <h5>{{department.name}}</h5>
   </div>
   <div class="col m3 s6 center-align">
     <a class="btn-floating waves-effect waves-light blue"
@@ -8,30 +8,31 @@
       <i *ngIf="showInfo" class="material-icons">keyboard_arrow_up</i>
       <i *ngIf="!showInfo" class="material-icons">keyboard_arrow_down</i>
     </a>
-    <a [routerLink]="'/students/' + group.number" class="btn-floating waves-effect waves-light blue-grey">
+<!--    ?? []-->
+    <a [routerLink]="'/employees/' + department.id" class="btn-floating waves-effect waves-light blue-grey">
       <i class="material-icons">view_headline</i>
     </a>
   </div>
 </div>
 <div class="info" *ngIf="showInfo">
   <div class="input-filed">
-    <label for="number" class="active">Group number</label>
-    <input id="number" [(ngModel)]="group.number" type="text" class="validate">
+    <label for="id" class="active">Department Id</label>
+    <input id="id" [(ngModel)]="department.id" type="text" class="validate">
   </div>
   <div class="input-field">
-    <label for="faculty" class="active">Faculty</label>
-    <input type="text" id="faculty" [(ngModel)]="group.faculty">
+    <label for="name" class="active">Name</label>
+    <input type="text" id="name" [(ngModel)]="department.name">
   </div>
   <div class="input-field">
-    <label for="speciality" class="active">Speciality</label>
-    <input type="text" id="speciality" [(ngModel)]="group.speciality" class="validate">
+    <label for="type" class="active">Type</label>
+    <input type="text" id="type" [(ngModel)]="department.type" class="validate">
   </div>
   <div class="input-field">
-    <label for="quantity" class="active">Students quantity</label>
-    <input type="number" id="quantity" [(ngModel)]="group.studentsQuantity" class="validate">
+    <label for="quantity" class="active">Employees quantity</label>
+    <input type="number" id="quantity" [ngModel]="employeesQuantity" readonly>
   </div>
   <a class="rem-row btn-floating waves-effect waves-light red"
-     (click)="delGroup()">
+     (click)="delDepartment()">
     <i class="material-icons">delete</i>
   </a>
 </div>

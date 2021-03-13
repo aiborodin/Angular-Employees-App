@@ -1,26 +1,22 @@
-<div class="row">
+<div class="row valign-wrapper">
   <div class="col m6 offset-m3 s12">
     <a *ngIf="!showForm" (click)="showForm=true" class="btn-floating btn-large waves-effect waves-light green">
       <i class="material-icons">add</i>
     </a>
     <form *ngIf="showForm" #myForm="ngForm" novalidate
           (ngSubmit)="onSubmit(myForm)">
-      <h5>New group</h5>
+      <h5>New employee</h5>
       <div class="input-field">
-        <label for="number">Group number</label>
-        <input type="text" id="number" name="number" ngModel required>
+        <label for="id">Employee id</label>
+        <input type="number" id="id" name="id" ngModel required>
       </div>
       <div class="input-field">
-        <label for="faculty">Faculty</label>
-        <input type="text" id="faculty" name="faculty" ngModel required>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" ngModel required>
       </div>
       <div class="input-field">
-        <label for="speciality">Speciality</label>
-        <input type="text" id="speciality" name="speciality" ngModel required>
-      </div>
-      <div class="input-field">
-        <label for="quantity">Students Quantity</label>
-        <input type="number" id="quantity" name="studentsQuantity" ngModel required>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" ngModel required>
       </div>
       <div class="form-group">
         <button type="button" (click)="showForm=false"

@@ -1,0 +1,5 @@
+<h5 class="center-align">Departments list</h5>
+<app-new-department></app-new-department>
+<app-department *ngFor="let department of departments, let i = index"
+                [department]="department" [depIndex]="i">
+</app-department>
